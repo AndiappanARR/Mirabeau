@@ -1,0 +1,75 @@
+﻿@model Mirabeau.Model.Models.AirportCompareModel
+@using Mirabeau.Model.Models
+
+<div class="container">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p class="">Compare any two airports</p>
+            <!--IATA drop down -->
+            <select id="compare-airport" multiple class="browser-default custom-select" style="height:200px;width:150px;">
+
+                @foreach (IATAModel countryMod in Model.IATAModel)
+                {
+                    if (Model.SelectedIATA != null &&
+                        Model.SelectedIATA.Contains(countryMod.IATACode))
+                    {
+                        <option selected value="@countryMod.IATACode">@countryMod.IATACode</option>
+                    }
+                    else
+                    {
+                        <option value="@countryMod.IATACode">@countryMod.IATACode</option>
+                    }
+
+                }
+            </select>
+
+            <button disabled id="compare-button" type="button" class="btn btn-success">
+                Compare airport
+            </button>
+
+        </div>
+    </div>
+
+
+    @if (Model.AirportViewModel != null)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading">Distance</div>
+            <div class="panel-body">
+                <!--Compare view -->
+                <div class="row">
+                    @foreach (AirportServiceModel mod in Model.AirportViewModel)
+                    {
+
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">@mod.Iata</div>
+                                <div class="panel-body">
+                                    <span>AirportName:  @mod.Name</span>
+                                    <br />
+                                    <span>Continent:  @mod.Continent</span>
+                                    <br />
+                                    <span>Lat:  @mod.Lat | Long : @mod.Lon</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                @if (Model.Distance == 0)
+                {
+                    <!--Error -->
+                    <div class="alert alert-danger">
+                        <strong>Not found!</strong> There is no proper lat and long for the choosen airports.
+                    </div>
+                }
+                <!--Distance feed -->
+                <h3 class="panel-primary">Distance between selected airports <span class="badge badge-light">@Model.Distance</span> @Model.DistanceType</h3>
+            </div>
+        </div>
+    }
+
+</div>
+
+

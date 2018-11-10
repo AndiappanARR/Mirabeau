@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Mirabeau/Mirabeau/bin/roslyn
+/Mirabeau/packages/Microsoft.Net.Compilers.2.1.0

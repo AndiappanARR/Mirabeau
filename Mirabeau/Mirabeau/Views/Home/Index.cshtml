@@ -1,0 +1,98 @@
+﻿@using Mirabeau.Model.Models;
+@model Mirabeau.Model.Models.AirportGlobalServiceModel
+
+
+
+<div class="container">
+    <!--Country DD -->
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p class="">Filter airport by country</p>
+            <select id="countrylist" class="browser-default custom-select">
+                <option value="">Select All</option>
+
+                @foreach (CountryCollectionServiceModel countryMod in Model.CountryCollectionModel)
+                {
+                    if (!string.IsNullOrEmpty(Model.SelectedCountryCode) &&
+                        Model.SelectedCountryCode.Equals(countryMod.CountryCode, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        <option selected value="@countryMod.CountryCode">@countryMod.CountryDisplayName</option>
+                    }
+                    else
+                    {
+                        <option value="@countryMod.CountryCode">@countryMod.CountryDisplayName</option>
+                    }
+
+                }
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Search results</div>
+        <div class="panel-body">
+            <button type="button" class="btn btn-success">
+                Total records found <span class="badge badge-light">@Model.TotalRecords</span>
+                <span class="sr-only"></span>
+            </button>
+            <!--Table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Iata</th>
+                        <th>Iso</th>
+                        <th>Status</th>
+                        <th>Name</th>
+                        <th>Continent</th>
+                        <th>Type</th>
+                        <th>Lat</th>
+                        <th>Lon</th>
+                        <th>Size</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (AirportServiceModel mod in Model.AirportViewModel)
+                    {
+                        <tr>
+                            <td>@mod.Iata</td>
+                            <td>@mod.Iso</td>
+                            <td>@mod.Status</td>
+                            <td>@mod.Name</td>
+                            <td>@mod.Continent</td>
+                            <td>@mod.Type</td>
+                            <td>@mod.Lat</td>
+                            <td>@mod.Lon</td>
+                            <td>@mod.Size</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <!--Pagination number -->
+            <p class="btn btn-primary text-right">
+                Choose by page numbers <span class="badge badge-light"></span>
+                <select id="PaginationNumber" class="browser-default custom-select">
+
+                    @for (int i = 1; i <= Model.TotalPaginationNumber; i++)
+                    {
+                        if (Model.PageNumber == i)
+                        {
+                            <option selected value="@i">@i</option>
+                        }
+                        else
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    }
+
+
+                </select>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
