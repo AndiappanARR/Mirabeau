@@ -49,5 +49,38 @@ Solution involves five different projects.
     4.	Mirabeau.Model
     5.	Mirabeau.Service
     6.	Mirabeau.Unity
+    
+    
+  # Extra suggessted approaches for refreshing json service datas
+    
+  ### Approach: Windows scheduler
+      Create windows scheduler and that will communicate service and write Json for an intervel time. Application needs to get the json file.
+   #### Pros
 
+    •	No PErformance or memory glitches in server side
+    •	No client side polling
+
+   #### Cons
+  •	WIndows service need to setup 
+  •	Need to write json file and from that need to get the data , instead of service.
+  •	Lock maintenance
+
+ ### Approach: Timer in server side
+  A server side timer will call a respective method for every interval time. 
+   #### Pros
+
+    •	Easy implemetations
+    •	No client side polling
+
+   #### Cons
+  •	IIS apppool stops , timer get affect. This will again intiate. 
+
+ ### Approach: Client side polling or Signal-R
+  Client side javascript will continuosly polling to the server for refreshing json data.
+   #### Pros
+   
+    •	No Server side dependenicies
+
+   #### Cons
+  •	Polling will cause continuous server side trips.
 
