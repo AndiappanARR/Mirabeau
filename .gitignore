@@ -4,3 +4,19 @@
 
 /Mirabeau/Mirabeau/bin/roslyn
 /Mirabeau/packages/Microsoft.Net.Compilers.2.1.0
+/.vs
+/Mirabeau/.vs
+/Mirabeau/Mirabeau/bin
+/Mirabeau/Mirabeau/obj/Debug
+/Mirabeau/Mirabeau.Business/bin/Debug
+/Mirabeau/Mirabeau.Business/obj/Debug
+/Mirabeau/Mirabeau.Business/obj/Release
+/Mirabeau/Mirabeau.Common/bin/Debug
+/Mirabeau/Mirabeau.Model/bin/Debug
+/Mirabeau/Mirabeau.Service/bin/Debug
+/Mirabeau/Mirabeau.Model/obj
+/Mirabeau/Mirabeau.Service/obj
+/Mirabeau/Mirabeau.Unity/bin/Debug
+/Mirabeau/Mirabeau.Unity/obj
+/Mirabeau/packages
+/Mirabeau/Mirabeau.Common/obj
