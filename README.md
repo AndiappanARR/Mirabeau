@@ -1,7 +1,8 @@
 # Mirabeau
-1. Read functional requirement document for functional flows.
 
-2. Read Technical design documet to understand all technolgies used in project.
+1. Read functional requirement document(Mirabeau_FRD) for functional flows.
+
+2. Read Technical design documet(Mirabeau_TDD) to understand all technolgies used in project.
 
 3. Clone the solution or download and run in your machine.
 
