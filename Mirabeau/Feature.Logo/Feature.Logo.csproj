@@ -181,10 +181,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mirabeau.Business\Mirabeau.Business.csproj">
-      <Project>{e68c0836-35f8-4696-b392-0758256ef792}</Project>
-      <Name>Mirabeau.Business</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Mirabeau.Common\Mirabeau.Common.csproj">
       <Project>{a6455102-349a-47a2-a19e-6da16f39d1e5}</Project>
       <Name>Mirabeau.Common</Name>
